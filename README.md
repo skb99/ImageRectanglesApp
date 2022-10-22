@@ -58,3 +58,14 @@ To resize a rectangle.
 Finding the sweet spot to select the edge can take some trial and error. 
 
 Please feel free to reach out with any feedback, questions or suggestions at krishnabh99@gmail.com or skb89@drexel.edu
+
+
+## Resources Used
+1. https://learn.microsoft.com/en-us/dotnet/api/system.windows.window?view=windowsdesktop-7.0
+2. https://www.youtube.com/watch?v=affbgRZoeGc&t=127s
+3. https://www.youtube.com/watch?v=oSeYvMEH7jc&t=1710s  (Very Helpful!)
+4. https://www.youtube.com/watch?v=8eTWq27h4sY&t=1s
+5. https://learn.microsoft.com/en-us/dotnet/api/system.windows.controls.canvas?view=windowsdesktop-6.0
+6. https://stackoverflow.com/questions/5622854/how-do-i-show-a-save-as-dialog-in-wpf
+7. https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/viewbox?view=netframeworkdesktop-4.8
+8. https://stackoverflow.com/questions/21143444/standard-draw-on-canvas-program-offset-caused-by-docked-ui-elements-how-to-dyn
