@@ -5,24 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageRectangles"
         mc:Ignorable="d"
+        KeyDown="Window_KeyDown"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid >
+        <!--https://wpf-tutorial.com/panels/introduction-to-wpf-panels/-->
         <DockPanel x:Name="NavBar" Background="LightBlue" Height="40" VerticalAlignment="Bottom" >
-
             <Label Margin="10,0,0,0" Height="23" Name="Label1">
-
                 Current File:
-
             </Label>
-
             <Label Margin="5,0,0,0" Height="25" Name="FileNameLabel" Width="300" />
-            <Button Height="24" x:Name="BrowseButton" Width="75" Click="BrowseButton_Click" RenderTransformOrigin="0.5,0.5" Content="Browse" HorizontalAlignment="Right"/>
-
+            <Button Height="24" x:Name="BrowseButton" Width="75" Click="BrowseButton_Click" RenderTransformOrigin="0.5,0.5" Content="Browse" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
-
-        <DockPanel Margin="0,0,0,40" >
-            <Image Name="ImageViewer1" VerticalAlignment="Top" Stretch="Uniform" StretchDirection="DownOnly" />
-
+        <Viewbox x:Name="Box" Margin="0,0,0,45">
+            <StackPanel x:Name="sp">
+                <Canvas
+                x:Name="canvasWindow"
+                AllowDrop="True"
+                MouseDown="MousePressedDownHandler" 
+                MouseMove ="MouseMovedHandler"
+                MouseUp="MouseLiftedUpHandler"
+                Drop="Canvas_Drop"
+                VerticalAlignment="Top"
+                        >
+                    <Canvas.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Blue" Click="Blue_MenuItem_Click" />
+                            <MenuItem Header="Green" Click="Green_MenuItem_Click"/>
+                            <MenuItem Header="Yellow" Click="Yellow_MenuItem_Click"/>
+                            <MenuItem Header="Black" Click="Black_MenuItem_Click"/>
+                            <MenuItem Header="Red" Click="Red_MenuItem_Click"/>
+                        </ContextMenu>
+                    </Canvas.ContextMenu>
+                    <Canvas.Background>
+                        <ImageBrush/>
+                    </Canvas.Background>
+                </Canvas>
+            </StackPanel>
+        </Viewbox>
+        <DockPanel x:Name="ColorBar" Background="LightBlue" Width="60" HorizontalAlignment="Left" Margin="0,0,0,40" >
+            <StackPanel>
+                <Button Height="24" x:Name="Load" Width="50" RenderTransformOrigin="0.5,0.5" Click="Load_Click" Content="Load" VerticalAlignment="Bottom" Margin="5" />
+                <Button Height="24" x:Name="Save" Width="50" RenderTransformOrigin="0.5,0.5" Click="save_Click" Content="Save" VerticalAlignment="Bottom" Margin="5" />
+            </StackPanel>
         </DockPanel>
     </Grid>
 </Window>
